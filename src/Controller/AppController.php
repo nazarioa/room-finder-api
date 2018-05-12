@@ -41,10 +41,14 @@ class AppController extends Controller
     {
         parent::initialize();
 
-        $this->loadComponent('RequestHandler', [
-            'enableBeforeRedirect' => false,
-        ]);
-        $this->loadComponent('Flash');
+        $this->loadComponent('RequestHandler');
+
+        // Forcing JSON response without layout as I am not sure why RequestHandler is not doing this automagically on its own
+        $this->RequestHandler->renderAs($this, 'json');
+        $this->getResponse()->withType('application/json');
+        $this->set('_serialize', true);
+
+        // $this->loadComponent('Flash');
 
         /*
          * Enable the following components for recommended CakePHP security settings.

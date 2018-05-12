@@ -88,4 +88,23 @@ class UsersTable extends Table
 
         return $rules;
     }
+
+
+    public function findFuzzy(Query $query, array $options)
+    {
+        return $query->select([
+          'id',
+          'first_name',
+          'last_name',
+          'email',
+        ])->where([
+            'or' =>
+              [
+                'Users.first_name like' => '%' . $options['searchString'] . '%',
+                'Users.last_name like' => '%' . $options['searchString'] . '%',
+                'Users.email like' => '%' . $options['searchString'] . '%',
+              ]
+          ]
+        );
+    }
 }

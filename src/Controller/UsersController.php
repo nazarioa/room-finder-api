@@ -104,4 +104,16 @@ class UsersController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function search($searchString = '')
+    {
+        $result = array();
+        if (empty($searchString)) {
+            $this->set(compact('result'));
+            return;
+        }
+
+        $result = $this->Users->find('fuzzy', ['searchString' => $searchString]);
+        $this->set(compact('result'));
+    }
 }

@@ -109,4 +109,16 @@ class RoomsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function search($searchString = '')
+    {
+        $result = array();
+        if (empty($searchString)) {
+            $this->set(compact('result'));
+            return;
+        }
+
+        $result = $this->Rooms->find('fuzzy', ['searchString' => $searchString]);
+        $this->set(compact('result'));
+    }
 }

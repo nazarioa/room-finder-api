@@ -105,4 +105,23 @@ class RoomsTable extends Table
 
         return $rules;
     }
+
+    public function findFuzzy(Query $query, array $options)
+    {
+        return $query->select([
+          'id',
+          'name',
+          'code',
+          'floor_id',
+          'has_whiteboard',
+          'has_projection',
+        ])->where([
+            'or' =>
+              [
+                'Rooms.name like' => '%' . $options['searchString'] . '%',
+                'Rooms.code like' => '%' . $options['searchString'] . '%',
+              ]
+          ]
+        );
+    }
 }

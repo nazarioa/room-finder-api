@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
@@ -38,10 +39,10 @@ class RoomsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Floors', [
-            'foreignKey' => 'floor_id'
+          'foreignKey' => 'floor_id'
         ]);
         $this->hasMany('UserRooms', [
-            'foreignKey' => 'room_id'
+          'foreignKey' => 'room_id'
         ]);
     }
 

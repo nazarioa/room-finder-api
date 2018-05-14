@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -21,7 +22,7 @@ class RoomsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Floors']
+          'contain' => ['Floors']
         ];
         $rooms = $this->paginate($this->Rooms);
 
@@ -38,7 +39,7 @@ class RoomsController extends AppController
     public function view($id = null)
     {
         $room = $this->Rooms->get($id, [
-            'contain' => ['Floors', 'UserRooms']
+          'contain' => ['Floors', 'UserRooms']
         ]);
 
         $this->set('room', $room);
@@ -75,7 +76,7 @@ class RoomsController extends AppController
     public function edit($id = null)
     {
         $room = $this->Rooms->get($id, [
-            'contain' => []
+          'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $room = $this->Rooms->patchEntity($room, $this->request->getData());

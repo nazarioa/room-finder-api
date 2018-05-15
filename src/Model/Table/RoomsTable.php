@@ -81,9 +81,7 @@ class RoomsTable extends Table
             ->allowEmpty('has_projection');
 
         $validator
-            ->scalar('image_coordiantes')
-            ->maxLength('image_coordiantes', 255)
-            ->allowEmpty('image_coordiantes');
+            ->allowEmpty('image_coordinates');
 
         $validator
             ->scalar('calendar_api')

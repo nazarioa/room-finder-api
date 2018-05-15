@@ -23,7 +23,7 @@ class RoomsFixture extends TestFixture
         'description' => ['type' => 'text', 'length' => null, 'null' => true, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null],
         'has_whiteboard' => ['type' => 'boolean', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
         'has_projection' => ['type' => 'boolean', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
-        'image_coordiantes' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'image_coordinates' => ['type' => 'binary', 'length' => null, 'null' => true, 'default' => '\'NULL\'', 'comment' => '', 'precision' => null],
         'floor_id' => ['type' => 'integer', 'length' => 10, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'calendar_api' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         '_constraints' => [
@@ -51,7 +51,7 @@ class RoomsFixture extends TestFixture
                 'description' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
                 'has_whiteboard' => 1,
                 'has_projection' => 1,
-                'image_coordiantes' => 'Lorem ipsum dolor sit amet',
+                'image_coordinates' => 'Lorem ipsum dolor sit amet',
                 'floor_id' => 1,
                 'calendar_api' => 'Lorem ipsum dolor sit amet'
             ],

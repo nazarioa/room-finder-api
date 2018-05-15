@@ -12,7 +12,7 @@ use Cake\ORM\Entity;
  * @property string $description
  * @property bool $has_whiteboard
  * @property bool $has_projection
- * @property string $image_coordiantes
+ * @property string|resource $image_coordinates
  * @property int $floor_id
  * @property string $calendar_api
  *
@@ -37,7 +37,7 @@ class Room extends Entity
         'description' => true,
         'has_whiteboard' => true,
         'has_projection' => true,
-        'image_coordiantes' => true,
+        'image_coordinates' => true,
         'floor_id' => true,
         'calendar_api' => true,
         'floor' => true,

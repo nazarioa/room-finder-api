@@ -12,7 +12,7 @@ use Cake\ORM\Entity;
  * @property string $description
  * @property bool $has_whiteboard
  * @property bool $has_projection
- * @property string|resource $image_coordinates
+ * @property string $image_coordinates
  * @property int $floor_id
  * @property string $calendar_api
  *

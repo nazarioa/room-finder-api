@@ -82,4 +82,14 @@ class RoomsTableTest extends TestCase
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
+
+    /**
+     * Test findFuzzy method
+     *
+     * @return void
+     */
+    public function testFindFuzzy()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
 }

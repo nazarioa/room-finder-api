@@ -81,6 +81,8 @@ class RoomsTable extends Table
             ->allowEmpty('has_projection');
 
         $validator
+            ->scalar('image_coordinates')
+            ->maxLength('image_coordinates', 4294967295)
             ->allowEmpty('image_coordinates');
 
         $validator
@@ -112,6 +114,7 @@ class RoomsTable extends Table
           'Rooms.name',
           'Rooms.code',
           'Rooms.floor_id',
+          'Rooms.image_coordinates',
           'Floors.name',
           'Buildings.name',
           'Buildings.address',

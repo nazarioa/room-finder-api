@@ -10,8 +10,7 @@ use Cake\Validation\Validator;
  * Floors Model
  *
  * @property \App\Model\Table\BuildingsTable|\Cake\ORM\Association\BelongsTo $Buildings
- * @property \App\Model\Table\FloorsTable|\Cake\ORM\Association\BelongsTo $Floors
- * @property \App\Model\Table\FloorsTable|\Cake\ORM\Association\HasMany $Floors
+ * @property \App\Model\Table\FloorsTable|\Cake\ORM\Association\BelongsTo $Maps
  * @property \App\Model\Table\RoomsTable|\Cake\ORM\Association\HasMany $Rooms
  *
  * @method \App\Model\Entity\Floor get($primaryKey, $options = [])
@@ -42,11 +41,8 @@ class FloorsTable extends Table
         $this->belongsTo('Buildings', [
             'foreignKey' => 'building_id'
         ]);
-        $this->belongsTo('Floors', [
-            'foreignKey' => 'floor_id'
-        ]);
-        $this->hasMany('Floors', [
-            'foreignKey' => 'floor_id'
+        $this->belongsTo('Maps', [
+            'foreignKey' => 'map_id'
         ]);
         $this->hasMany('Rooms', [
             'foreignKey' => 'floor_id'
@@ -83,7 +79,7 @@ class FloorsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['building_id'], 'Buildings'));
-        $rules->add($rules->existsIn(['floor_id'], 'Floors'));
+        $rules->add($rules->existsIn(['map_id'], 'Maps'));
 
         return $rules;
     }

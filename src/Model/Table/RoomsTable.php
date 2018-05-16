@@ -128,12 +128,12 @@ class RoomsTable extends Table
               ]
           ]
         )->join([
-          'floors' => [
+          'Floors' => [
             'table' => 'floors',
             'type' => 'LEFT',
             'conditions' => 'Rooms.floor_id = Floors.id',
           ],
-          'buildings' => [
+          'Buildings' => [
             'table' => 'buildings',
             'type' => 'LEFT',
             'conditions' => 'Buildings.id = Floors.building_id'

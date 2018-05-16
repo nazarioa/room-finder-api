@@ -9,10 +9,10 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $name
  * @property int $building_id
- * @property int $floor_id
+ * @property int $map_id
  *
  * @property \App\Model\Entity\Building $building
- * @property \App\Model\Entity\Floor[] $floors
+ * @property \App\Model\Entity\Map $map
  * @property \App\Model\Entity\Room[] $rooms
  */
 class Floor extends Entity
@@ -30,9 +30,9 @@ class Floor extends Entity
     protected $_accessible = [
         'name' => true,
         'building_id' => true,
-        'floor_id' => true,
+        'map_id' => true,
         'building' => true,
-        'floors' => true,
+        'map' => true,
         'rooms' => true
     ];
 }

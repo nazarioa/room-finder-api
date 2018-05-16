@@ -10,6 +10,7 @@ use Cake\ORM\Entity;
  * @property string $image_url
  *
  * @property \App\Model\Entity\Building[] $buildings
+ * @property \App\Model\Entity\Floor[] $floors
  */
 class Map extends Entity
 {
@@ -25,6 +26,7 @@ class Map extends Entity
      */
     protected $_accessible = [
         'image_url' => true,
-        'buildings' => true
+        'buildings' => true,
+        'floors' => true
     ];
 }

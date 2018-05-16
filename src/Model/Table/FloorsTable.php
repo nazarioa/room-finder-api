@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * Floors Model
  *
  * @property \App\Model\Table\BuildingsTable|\Cake\ORM\Association\BelongsTo $Buildings
- * @property \App\Model\Table\FloorsTable|\Cake\ORM\Association\BelongsTo $Maps
+ * @property \App\Model\Table\MapsTable|\Cake\ORM\Association\BelongsTo $Maps
  * @property \App\Model\Table\RoomsTable|\Cake\ORM\Association\HasMany $Rooms
  *
  * @method \App\Model\Entity\Floor get($primaryKey, $options = [])

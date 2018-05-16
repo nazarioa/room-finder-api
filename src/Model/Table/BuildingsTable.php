@@ -73,6 +73,11 @@ class BuildingsTable extends Table
             ->allowEmpty('state');
 
         $validator
+            ->scalar('city')
+            ->maxLength('city', 255)
+            ->allowEmpty('city');
+
+        $validator
             ->scalar('zip')
             ->maxLength('zip', 10)
             ->allowEmpty('zip');

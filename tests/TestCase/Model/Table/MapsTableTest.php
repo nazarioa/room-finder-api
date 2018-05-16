@@ -25,7 +25,8 @@ class MapsTableTest extends TestCase
      */
     public $fixtures = [
         'app.maps',
-        'app.buildings'
+        'app.buildings',
+        'app.floors'
     ];
 
     /**

@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * Maps Model
  *
  * @property \App\Model\Table\BuildingsTable|\Cake\ORM\Association\HasMany $Buildings
+ * @property \App\Model\Table\FloorsTable|\Cake\ORM\Association\HasMany $Floors
  *
  * @method \App\Model\Entity\Map get($primaryKey, $options = [])
  * @method \App\Model\Entity\Map newEntity($data = null, array $options = [])
@@ -37,6 +38,9 @@ class MapsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->hasMany('Buildings', [
+            'foreignKey' => 'map_id'
+        ]);
+        $this->hasMany('Floors', [
             'foreignKey' => 'map_id'
         ]);
     }

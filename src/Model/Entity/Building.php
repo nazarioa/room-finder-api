@@ -10,6 +10,7 @@ use Cake\ORM\Entity;
  * @property string $name
  * @property string $address
  * @property string $state
+ * @property string $city
  * @property string $zip
  * @property string $image_coordiantes
  * @property int $map_id
@@ -35,6 +36,7 @@ class Building extends Entity
         'name' => true,
         'address' => true,
         'state' => true,
+        'city' => true,
         'zip' => true,
         'image_coordiantes' => true,
         'map_id' => true,

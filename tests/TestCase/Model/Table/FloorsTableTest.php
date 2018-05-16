@@ -26,6 +26,7 @@ class FloorsTableTest extends TestCase
     public $fixtures = [
         'app.floors',
         'app.buildings',
+        'app.maps',
         'app.rooms'
     ];
 
